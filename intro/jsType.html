@@ -45,6 +45,11 @@
 
               // #3 直接插入 HTML 結構的變數
               // https://getbootstrap.com/docs/5.2/components/card/#list-groups
+              const list = [
+                <li className="list-group-item">An item</li>,
+                <li className="list-group-item">A second item</li>,
+                <li className="list-group-item">A third item</li>,
+              ];
 
               return (
                 <div className="card w-50">
@@ -56,12 +61,15 @@
                       Go somewhere
                     </a>
                   </div>
-
                   {/* 1. JSX 不會呈現物件型別以及特定的原始型別 */}
-
+                  {data.name}
+                  <br />
+                  {JSON.stringify(data)} <br />
+                  {true ? data.name : "false"}
                   {/* 2. 陣列中的值會直接呈現在畫面上 */}
-
+                  {(1, 2, 3, (<div>大家好</div>))}
                   <ul className="list-group list-group-flush"></ul>
+                  {list}
                 </div>
               );
             }
