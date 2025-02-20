@@ -34,29 +34,40 @@
           <div id="root"></div>
 
           <script type="text/babel">
-                                    // 1. 定義元件一定是大寫
-                                    // 2. 多個元素外層需要使用標籤包覆，或使用 React.Fragment
-                                    // 3. 沒有正確結尾，結尾不正確
-                                    // 4. 屬性轉換名稱運用要正確
-                                    // 5. return 建議加入括號
+            // 1. 定義元件一定是大寫
+            // 2. 多個元素外層需要使用標籤包覆，或使用 React.Fragment
+            // 3. 沒有正確結尾，結尾不正確
+            // 4. 屬性轉換名稱運用要正確
+            // 5. return 建議加入括號
 
-                        function app() {
-                          return
-                          <label for="exampleDataList" class="form-label" style="color: var(--bs-blue)">Datalist example</label>
-                            <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
-                            <datalist id="datalistOptions">
-                              <option value="San Francisco">
-                              <option value="New York">
-                              <option value="Seattle">
-                              <option value="Los Angeles">
-                              <option value="Chicago">
-                          </datalist>
-                        }
+            function App() {
+              return (
+                <>
+                  <label htmlFor="exampleDataList" className="form-label" style={{ color: "var(--bs-blue)" }}>
+                    Datalist example
+                  </label>
+                  <input
+                    className="form-control"
+                    list="datalistOptions"
+                    id="exampleDataList"
+                    placeholder="Type to search..."
+                    onChange={function (event) {
+                      console.log(event.target.value);
+                    }}
+                  />
+                  <datalist id="datalistOptions">
+                    <option value="San Francisco" />
+                    <option value="New York" />
+                    <option value="Seattle" />
+                    <option value="Los Angeles" />
+                    <option value="Chicago" />
+                  </datalist>
+                </>
+              );
+            }
 
             // 寫法改變了
-            ReactDOM
-              .createRoot(document.getElementById('root'))
-              .render(<app/>);
+            ReactDOM.createRoot(document.getElementById("root")).render(<App />);
           </script>
 
           <!-- 預期完成版本 -->
