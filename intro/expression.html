@@ -39,6 +39,12 @@
 -->
           <script>
             // 表達式與陳述式的差異
+            {
+              /* // 表達式
+            function fn(params) {}
+            // 宣告式
+            const fn = function () {};  */
+            }
           </script>
 
           <script type="text/babel">
@@ -60,6 +66,15 @@
                     <a href={data.link} target="_blank" className="btn btn-primary">
                       Go somewhere
                     </a>
+                    <br />
+                    {111}
+                    <br />
+                    {0 | 1}
+                    {data.name ? data.name : "Jay"}
+                    <br />
+                    {(function () {
+                      return 2 * 2;
+                    })()}
                   </div>
                 </div>
               );
