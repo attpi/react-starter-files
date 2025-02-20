@@ -33,11 +33,20 @@
           <!-- 🔥🔥練習開始🔥🔥 -->
           <div id="root"></div>
           <script type="text/babel">
+            //  function App() {
+            //    return (
+            //      <h1>
+            //        React 我來了 <small className="text-danger">{new Date().toLocaleDateString()}</small>
+            //      </h1>
+            //    );
+            //  }
             function App() {
-              return (
-                <h1>
-                  React 我來了 <small className="text-danger">{new Date().toLocaleDateString()}</small>
-                </h1>
+              return React.createElement(
+                "h1",
+                null,
+                "React 我我我~~~ ",
+                React.createElement("small", { className: "text-danger" }, new Date().toLocaleDateString()),
+                "  有練習"
               );
             }
 
