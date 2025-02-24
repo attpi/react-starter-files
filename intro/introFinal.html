@@ -39,45 +39,57 @@
           <div id="root"></div>
           <script type="text/babel">
             function App() {
+              const products = {
+                toothbrush: {
+                  imageUrl:
+                    "https://images.unsplash.com/photo-1520013573795-38516d2661e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1536&q=80",
+                  title: "好好刷牙刷",
+                  price: 96,
+                  link: "https://www.shallop.com.tw/products/super-dense-deep-clean",
+                },
+                sponge: {
+                  imageUrl:
+                    "https://images.unsplash.com/photo-1618038483079-bfe64dcb17f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+                  title: "黃色好海綿",
+                  price: 123,
+                  link: "https://shoplineimg.com/561fa424e36c8e1d5d000018/65d8080b4ffdb7000e92776e/800x.webp?source_format=jpg",
+                },
+                hook: {
+                  imageUrl:
+                    "https://images.unsplash.com/photo-1546552696-7d5f4e89b0e8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+                  title: "好好用掛鉤",
+                  price: 69,
+                  link: "https://shop.3m.com.tw/SalePage/ShowImageListV2?salePageId=4601373",
+                },
+              };
+
               return (
                 <>
                   <div className="row row-cols-3">
                     <div className="col">
-                      <a href="#" className="card">
-                        <img
-                          className="card-img-top object-fit"
-                          src="https://images.unsplash.com/photo-1520013573795-38516d2661e4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1536&q=80"
-                          alt=""
-                        />
-                        <div className="card-play">
-                          <span className="text-dark">好牙刷</span>
-                          <span className="float-end">$99</span>
+                      <a href={products.toothbrush.link} target="_blank" className="card">
+                        <img className="card-img-top object-fit" src={products.toothbrush.imageUrl} alt="" />
+                        <div className="card-body">
+                          <span className="text-dark">{products.toothbrush.title}</span>
+                          <span className="float-end">${products.toothbrush.price}</span>
                         </div>
                       </a>
                     </div>
                     <div className="col">
-                      <a href="#" className="card">
-                        <img
-                          className="card-img-top object-fit"
-                          src="https://images.unsplash.com/photo-1618038483079-bfe64dcb17f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-                          alt=""
-                        />
-                        <div className="card-play">
-                          <span className="text-dark">好海綿</span>
-                          <span className="float-end">$89</span>
+                      <a href={products.sponge.link} target="_blank" className="card">
+                        <img className="card-img-top object-fit" src={products.sponge.imageUrl} alt="" />
+                        <div className="card-body">
+                          <span className="text-dark">{products.sponge.title}</span>
+                          <span className="float-end">${products.sponge.price}</span>
                         </div>
                       </a>
                     </div>
                     <div className="col">
-                      <a href="#" className="card">
-                        <img
-                          className="card-img-top object-fit"
-                          src="https://images.unsplash.com/photo-1546552696-7d5f4e89b0e8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-                          alt=""
-                        />
-                        <div className="card-play">
-                          <span className="text-dark">好刷子</span>
-                          <span className="float-end">$109 </span>
+                      <a href={products.hook.link} target="_blank" className="card">
+                        <img className="card-img-top object-fit" src={products.hook.imageUrl} alt="" />
+                        <div className="card-body">
+                          <span className="text-dark">{products.hook.title}</span>
+                          <span className="float-end">${products.hook.price} </span>
                         </div>
                       </a>
                     </div>
