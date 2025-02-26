@@ -60,15 +60,46 @@
             // https://www.youtube.com/watch?v=_vFuDQ_6Xt8
 
             // #2. 操作所有陣列內的值（同一個陣列）
-
+            //people.forEach((item, i, array) => {
+            //  item.price = item.price * 0.8;
+            //  console.log(item.price);
+            //  console.log(people);
+            //});
             // #3. 重新建立新的陣列
+            //const order = people.map((item, i) => {
+            //  return {
+            //    price: item.price * 0.8,
+            //    title: item.like,
+            //    name: item.name,
+            //  };
+            //});
+            //console.log(order, people);
 
             // #4 map 使用注意事項
+            //const order = people.map((item, i) => {
+            //  if (item.price > 60) {
+            //    return {
+            //      price: item.price * 0.8,
+            //      title: item.like,
+            //      name: item.name,
+            //    };
+            //  }
+            //});
+            console.log(order);
 
             // 當直接回傳時，會出現 undefined 的內容
 
             // 解法
+            // 1. 使用 filter 來過濾：判斷使用，回傳的結果會與原始陣列的值一樣
 
+            const filterOrder = people.filter((item) => item.price > 60);
+            console.log(filterOrder);
+
+            const order = filterOrder.map((item, i) => ({
+              price: item.price * 0.8,
+              title: item.like,
+            }));
+            console.log(order);
             // #5 map 在 React 中的運用
             const App = () => {
               const people = [
@@ -95,7 +126,15 @@
               ];
               return (
                 <div>
-                  <ul></ul>
+                  <ul>
+                    {people.map((item, i) => {
+                      return (
+                        <li key={i}>
+                          {item.name} 喜歡吃 {item.like}
+                        </li>
+                      );
+                    })}
+                  </ul>
                 </div>
               );
             };
